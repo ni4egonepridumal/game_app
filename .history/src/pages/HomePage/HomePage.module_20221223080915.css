@@ -1,0 +1,9 @@
+.homeInner {
+    margin: 0 auto;
+}
+
+.homePage {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
