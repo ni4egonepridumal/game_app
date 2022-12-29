@@ -1,0 +1,32 @@
+.game {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.img {
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 20px;
+}
+.count {
+  margin: 0px 7px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.title {
+  text-align: center;
+}
+.gameCount {
+  font-size: 25px;
+  font-weight: bold;
+}
+.cartPageBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}

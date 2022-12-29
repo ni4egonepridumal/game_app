@@ -1,0 +1,12 @@
+.game {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.img {
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 20px;
+}
