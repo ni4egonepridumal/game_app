@@ -12,7 +12,7 @@ interface IAddGame {
   description: string;
 }
 
-export interface IInitialState {
+interface IInitialState {
   gameInCart: IAddGame[];
 }
 
