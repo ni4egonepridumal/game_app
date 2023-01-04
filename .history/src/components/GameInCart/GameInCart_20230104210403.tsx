@@ -1,12 +1,19 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./GameInCart.module.css";
-import { plusCount, minusCount } from "../../features/addGameToCartSlice";
-import { useAppDispatch } from "../../hooks";
+import {
+  deleteAllFromCart,
+  plusCount,
+  minusCount,
+} from "../../features/addGameToCartSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import IGameItemProps from "../../types/GameItem";
 
 export const GameInCart: React.FC<IGameItemProps> = ({ game }) => {
+  //console.log(game)
+
+  //console.log(gamePriceCount)
   const dispatch = useAppDispatch();
 
   const PlusCountGame = () => {
