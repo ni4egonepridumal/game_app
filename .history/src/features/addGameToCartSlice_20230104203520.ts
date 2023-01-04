@@ -47,13 +47,13 @@ export const addGameToCart = createSlice({
         (game) => game.id === action.payload
       );
       //state.gameInCart
-      if (gameCount && gameCount.count > 1) {
+      if (gameCount && gameCount.count > 0) {
         gameCount.count--;
       }
     },
   },
 });
 
-export const { addGame, removeGame, deleteAllFromCart, plusCount, minusCount } =
+export const { addGame, removeGame, deleteAllFromCart, plusCount } =
   addGameToCart.actions;
 export default addGameToCart.reducer;

@@ -47,7 +47,7 @@ export const addGameToCart = createSlice({
         (game) => game.id === action.payload
       );
       //state.gameInCart
-      if (gameCount && gameCount.count > 1) {
+      if (gameCount && gameCount.count > 0) {
         gameCount.count--;
       }
     },

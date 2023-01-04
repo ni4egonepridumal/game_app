@@ -11,11 +11,12 @@ import { deleteAllFromCart } from "../../features/addGameToCartSlice";
 
 export const CartPage: React.FC = () => {
   const gameInCart = useAppSelector((state) => state.addGameToCart.gameInCart);
+  const totallPrice = gameInCart.reduce((acc, game) => acc += game.price, 0)
   const dispatch = useAppDispatch();
   const clearCart = () => {
     dispatch(deleteAllFromCart());
   };
- // console.log(gameInCart);
+  console.log(gameInCart);
   return (
     <>
       <h2>Корзина</h2>

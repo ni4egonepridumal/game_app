@@ -34,26 +34,11 @@ export const addGameToCart = createSlice({
       state.gameInCart = [];
     },
     plusCount(state, action) {
-      const gameCount = state.gameInCart.find(
-        (game) => game.id === action.payload
-      );
-      //state.gameInCart
-      if (gameCount) {
-        gameCount.count++;
-      }
-    },
-    minusCount(state, action) {
-      const gameCount = state.gameInCart.find(
-        (game) => game.id === action.payload
-      );
-      //state.gameInCart
-      if (gameCount && gameCount.count > 1) {
-        gameCount.count--;
-      }
+      console.log(state.gameInCart.find(game => game.count));
     },
   },
 });
 
-export const { addGame, removeGame, deleteAllFromCart, plusCount, minusCount } =
+export const { addGame, removeGame, deleteAllFromCart, plusCount } =
   addGameToCart.actions;
 export default addGameToCart.reducer;

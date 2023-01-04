@@ -4,7 +4,6 @@ import styles from "./GameInCart.module.css";
 import {
   deleteAllFromCart,
   plusCount,
-  minusCount,
 } from "../../features/addGameToCartSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
@@ -16,12 +15,10 @@ export const GameInCart: React.FC<IGameItemProps> = ({ game }) => {
   //console.log(gamePriceCount)
   const dispatch = useAppDispatch();
 
-  const PlusCountGame = () => {
+  const handleCountGame = () => {
     dispatch(plusCount(game.id));
   };
-  const MinusCountGame = () => {
-    dispatch(minusCount(game.id));
-  };
+
   const decrGameCount = () => {
     if (gamePriceCount === 0) {
       setGamePriceCount(0);
@@ -54,11 +51,11 @@ export const GameInCart: React.FC<IGameItemProps> = ({ game }) => {
                   </span>
                 </div> */}
         <div>
-          <span className={styles.count} onClick={MinusCountGame}>
+          <span className={styles.count} onClick={() => console.log("---")}>
             -
           </span>
           <span className={styles.gameCount}>{game.count}</span>
-          <span className={styles.count} onClick={PlusCountGame}>
+          <span className={styles.count} onClick={handleCountGame}>
             +
           </span>
         </div>
