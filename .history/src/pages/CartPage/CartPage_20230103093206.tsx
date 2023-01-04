@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CartPage.module.css";
-import { v4 as uuidv4 } from "uuid";
+import {v4 as uuidv4} from "uuid"
+
 
 import { useAppSelector, useAppDispatch } from "../../hooks";
 
@@ -11,16 +12,21 @@ import { deleteAllFromCart } from "../../features/addGameToCartSlice";
 
 export const CartPage: React.FC = () => {
   const gameInCart = useAppSelector((state) => state.addGameToCart.gameInCart);
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   const clearCart = () => {
     dispatch(deleteAllFromCart());
   };
-  console.log(gameInCart);
+  console.log(gameInCart)
   return (
     <>
       <h2>Корзина</h2>
       {gameInCart.length > 0 ? (
-        gameInCart.map((item) => <GameInCart key={uuidv4()} game={item} />)
+        gameInCart.map(item => <><GameInCart key={uuidv4()} game={item}/><div className={styles.cartPageBottom}>
+        <div>Всего на сумму:</div>
+        <Button type="primary" size="m" onClick={clearCart}>
+          Очистить корзину
+        </Button>
+      </div></> )
       ) : (
         <div className={styles.title}>
           <div className={styles.fontSizeCartEmpty}>Ваша корзина пуста !</div>
@@ -31,14 +37,7 @@ export const CartPage: React.FC = () => {
           </Link>
         </div>
       )}
-      {gameInCart.length > 0 ? (
-        <div className={styles.cartPageBottom}>
-          <div>Всего на сумму:</div>
-          <Button type="primary" size="m" onClick={clearCart}>
-            Очистить корзину
-          </Button>
-        </div>
-      ) : null}
+       
     </>
   );
 };

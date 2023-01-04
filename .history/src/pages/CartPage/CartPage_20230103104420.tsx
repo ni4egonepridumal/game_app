@@ -11,11 +11,16 @@ import { deleteAllFromCart } from "../../features/addGameToCartSlice";
 
 export const CartPage: React.FC = () => {
   const gameInCart = useAppSelector((state) => state.addGameToCart.gameInCart);
+  //console.log(gameInCart)
+  const totalSumm = gameInCart.reduce((acc, game) => (acc += game.price), 0);
+  const some = gameInCart.map(item => item.count);
+  console.log(some)
+  //console.log(totalSumm);
   const dispatch = useAppDispatch();
   const clearCart = () => {
     dispatch(deleteAllFromCart());
   };
-  console.log(gameInCart);
+  //console.log(gameInCart);
   return (
     <>
       <h2>Корзина</h2>
@@ -33,7 +38,7 @@ export const CartPage: React.FC = () => {
       )}
       {gameInCart.length > 0 ? (
         <div className={styles.cartPageBottom}>
-          <div>Всего на сумму:</div>
+          <div>Всего на сумму: {totalSumm} руб.</div>
           <Button type="primary" size="m" onClick={clearCart}>
             Очистить корзину
           </Button>

@@ -20,7 +20,17 @@ export const CartPage: React.FC = () => {
     <>
       <h2>Корзина</h2>
       {gameInCart.length > 0 ? (
-        gameInCart.map((item) => <GameInCart key={uuidv4()} game={item} />)
+        gameInCart.map((item) => (
+          <div key={uuidv4()}>
+            <GameInCart game={item} />
+            <div className={styles.cartPageBottom}>
+              <div>Всего на сумму:</div>
+              <Button type="primary" size="m" onClick={clearCart}>
+                Очистить корзину
+              </Button>
+            </div>
+          </div>
+        ))
       ) : (
         <div className={styles.title}>
           <div className={styles.fontSizeCartEmpty}>Ваша корзина пуста !</div>
@@ -31,14 +41,6 @@ export const CartPage: React.FC = () => {
           </Link>
         </div>
       )}
-      {gameInCart.length > 0 ? (
-        <div className={styles.cartPageBottom}>
-          <div>Всего на сумму:</div>
-          <Button type="primary" size="m" onClick={clearCart}>
-            Очистить корзину
-          </Button>
-        </div>
-      ) : null}
     </>
   );
 };

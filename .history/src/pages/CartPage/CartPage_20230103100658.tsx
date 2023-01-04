@@ -20,7 +20,9 @@ export const CartPage: React.FC = () => {
     <>
       <h2>Корзина</h2>
       {gameInCart.length > 0 ? (
-        gameInCart.map((item) => <GameInCart key={uuidv4()} game={item} />)
+        gameInCart.map((item) => (
+            <GameInCart key={uuidv4()} game={item} />
+        ))
       ) : (
         <div className={styles.title}>
           <div className={styles.fontSizeCartEmpty}>Ваша корзина пуста !</div>

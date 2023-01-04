@@ -11,6 +11,7 @@ import { deleteAllFromCart } from "../../features/addGameToCartSlice";
 
 export const CartPage: React.FC = () => {
   const gameInCart = useAppSelector((state) => state.addGameToCart.gameInCart);
+  /const totalSumm = 
   const dispatch = useAppDispatch();
   const clearCart = () => {
     dispatch(deleteAllFromCart());
@@ -20,7 +21,9 @@ export const CartPage: React.FC = () => {
     <>
       <h2>Корзина</h2>
       {gameInCart.length > 0 ? (
-        gameInCart.map((item) => <GameInCart key={uuidv4()} game={item} />)
+        gameInCart.map((item) => (
+            <GameInCart key={uuidv4()} game={item} />
+        ))
       ) : (
         <div className={styles.title}>
           <div className={styles.fontSizeCartEmpty}>Ваша корзина пуста !</div>

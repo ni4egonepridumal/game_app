@@ -35,7 +35,7 @@ export const GameItem: React.FC<IGameItemProps> = ({ game }) => {
             ))}
           </div>
           <div className={styles.gameItem__buy}>
-            <span className={styles.gameBuy__price}>{game.price} руб.</span>
+            <span>{game.price}</span>
             <Button
               type={!isGameInCart ? "primary" : "secondary"}
               size="s"
