@@ -42,7 +42,7 @@ export const GameInCart: React.FC<IGameItemProps> = ({ game }) => {
             +
           </span>
         </div>
-        <BsTrash size={30} onClick={() => dispatch(removeGame(game.id))} />
+        <BsTrash size={30} onClick={() => dispatch(removeGame)} />
       </div>
     </div>
   );

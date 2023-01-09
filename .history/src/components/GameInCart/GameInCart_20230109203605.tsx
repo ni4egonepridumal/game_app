@@ -1,11 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./GameInCart.module.css";
-import {
-  plusCount,
-  minusCount,
-  removeGame,
-} from "../../features/addGameToCartSlice";
+import { plusCount, minusCount } from "../../features/addGameToCartSlice";
 import { useAppDispatch } from "../../hooks";
 import { BsTrash } from "react-icons/bs";
 
@@ -42,7 +38,7 @@ export const GameInCart: React.FC<IGameItemProps> = ({ game }) => {
             +
           </span>
         </div>
-        <BsTrash size={30} onClick={() => dispatch(removeGame(game.id))} />
+        <BsTrash size={30} onClick={()=>console.log("click")}/>
       </div>
     </div>
   );
