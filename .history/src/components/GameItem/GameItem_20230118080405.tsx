@@ -26,7 +26,7 @@ export const GameItem: React.FC<IGameItemProps> = ({ game }) => {
   return (
     <>
       <div className={styles.gameItem}>
-        <GameImg game={game} />
+        <GameImg image={game.image} onClick={()=>console.log('click')}/>
         <div className={styles.gameItem__details}>
           <span className={styles.gameItem__title}>{game.title}</span>
           <div className={styles.gameItem__genre}>

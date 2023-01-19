@@ -9,6 +9,9 @@ import { choiseCurrentGame } from "../../features/currentGameSlice";
 
 export const GameImg: React.FC<IGameItemProps> = ({ game }) => {
   const { currentGame } = useAppSelector((state) => state);
+  React.useEffect(() => {
+    dispatch(choiseCurrentGame(game));
+  }, []);
   //console.log(currentGame.game.image);
   const dispatch = useAppDispatch();
   const handleClick = () => {

@@ -23,10 +23,11 @@ export const GameItem: React.FC<IGameItemProps> = ({ game }) => {
     }
   };
 
+
   return (
     <>
       <div className={styles.gameItem}>
-        <GameImg game={game} />
+        <GameImg game={game}/>
         <div className={styles.gameItem__details}>
           <span className={styles.gameItem__title}>{game.title}</span>
           <div className={styles.gameItem__genre}>

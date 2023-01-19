@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import addGameToCart from "../features/addGameToCartSlice";
-import currentGame from "../features/currentGameSlice";
+import gameItem from "../features/gameItemSlice";
 
 export const store = configureStore({
   reducer: {
     addGameToCart,
-    currentGame,
+    gameItem,
   },
 });
 
