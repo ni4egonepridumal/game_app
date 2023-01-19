@@ -1,0 +1,10 @@
+.genre {
+  margin-left: 5px;
+  margin-bottom: 15px;
+  background-color: darkorchid;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+.innerGenre {
+  margin-bottom: 7px;
+}
