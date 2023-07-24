@@ -28,13 +28,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "concurrently \"npm run server-json\" \"react-scripts build\"",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server-json": "json-server --watch db.json --port 3001",
-    "serve": "concurrently \"npm run server-json\" \"npm start\"",
-    "dev": "NODE_ENV=development node server.js",
-    "start_serve": "NODE_ENV=production node server.js"
+    "serve": "concurrently \"npm run server-json\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [

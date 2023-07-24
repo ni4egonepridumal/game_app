@@ -10,7 +10,7 @@ export const HomePage: React.FC = () => {
   async function getGames() {
     try {
       const response = await axios.get<IGameItem[]>(
-        "http://localhost:3001/games"
+        "https://game-dv58uxms0-ni4egonepridumal.vercel.app/games"
       );
       setGame(response.data);
     } catch (error) {
